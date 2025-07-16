@@ -81,3 +81,23 @@ class Passageiro {
       console.log("Erro: passageiro já embarcado ou voo lotado.");
     }
   }
+
+  function emitirBilhete(indicePassageiro) {
+    const p = passageiros[indicePassageiro];
+    const b = bagagens[indicePassageiro];
+  
+    console.log("----- BILHETE -----");
+    console.log(`Nome: ${p.nome}`);
+    console.log(`Documento: ${p.documento}`);
+    console.log(`Status de embarque: ${p.statusEmbarque ? "EMBARCADO" : "NÃO EMBARCADO"}`);
+    console.log(`Bagagem autorizada: ${b.autorizada ? "SIM" : "NÃO"}`);
+    console.log("-------------------");
+  }
+  
+  // Função: encerrar sistema
+  function encerrarSistema() {
+    console.log("Sistema encerrado. Obrigado.");
+  }
+  
+  // Inicializar voos automaticamente ao iniciar o sistema
+  inicializarVoos();
