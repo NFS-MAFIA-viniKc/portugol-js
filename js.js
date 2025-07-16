@@ -37,3 +37,29 @@ class Passageiro {
     voos.push(new Voo("CD456", "Rio de Janeiro", "10:15", 4));
     voos.push(new Voo("EF789", "Salvador", "13:45", 5));
   }
+
+  function cadastrarPassageiro(nome, documento, pesoBagagem, tipoBagagem) {
+    if (passageiros.length >= 10) {
+      console.log("Limite de passageiros atingido.");
+      return;
+    }
+  
+    const passageiro = new Passageiro(nome, documento);
+    const bagagem = new Bagagem(pesoBagagem, tipoBagagem);
+    verificarBagagem(bagagem, passageiro);
+  
+    passageiros.push(passageiro);
+    bagagens.push(bagagem);
+  }
+  
+  // Função: verificar bagagem
+  function verificarBagagem(bagagem, passageiro) {
+    if (bagagem.peso <= 23.0) {
+      bagagem.autorizada = true;
+      passageiro.bagagemRegistrada = true;
+    } else {
+      console.log("Bagagem acima do peso permitido!");
+    }
+  }
+
+  
