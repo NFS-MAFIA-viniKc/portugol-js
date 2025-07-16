@@ -8,4 +8,20 @@ class Passageiro {
     }
   }
   
+  class Voo {
+    constructor(numero, destino, horario, capacidade) {
+      this.numero = numero;
+      this.destino = destino;
+      this.horario = horario;
+      this.capacidade = capacidade;
+      this.quantidadeEmbarcados = 0;
+    }
+  }
   
+  class Bagagem {
+    constructor(peso, tipo) {
+      this.peso = peso;
+      this.tipo = tipo;
+      this.autorizada = false;
+    }
+  }
