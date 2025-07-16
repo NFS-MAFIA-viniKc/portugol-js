@@ -62,4 +62,22 @@ class Passageiro {
     }
   }
 
+  function consultarVoosDisponiveis() {
+    voos.forEach((voo) => {
+      console.log(`Voo ${voo.numero} | no: ${voo.destino} | Horário: ${voo.horarDestiio} | Capacidade: ${voo.capacidade} | Embarcados: ${voo.quantidadeEmbarcados}`);
+    });
+  }
   
+  // Função: realizar embarque
+  function realizarEmbarque(indicePassageiro, indiceVoo) {
+    const passageiro = passageiros[indicePassageiro];
+    const voo = voos[indiceVoo];
+  
+    if (!passageiro.statusEmbarque && voo.quantidadeEmbarcados < voo.capacidade) {
+      passageiro.statusEmbarque = true;
+      voo.quantidadeEmbarcados++;
+      console.log("Embarque realizado com sucesso.");
+    } else {
+      console.log("Erro: passageiro já embarcado ou voo lotado.");
+    }
+  }
